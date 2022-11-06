@@ -1,0 +1,50 @@
+{
+  "name": "IIDX Extends",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://p.eagate.573.jp/game/2dx/*/*"
+      ],
+      "js": [
+        "content_scripts/common.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://p.eagate.573.jp/game/2dx/*/rival/bingo/card_create.html",
+        "https://p.eagate.573.jp/game/2dx/*/rival/bingo/card_create.html?*"
+      ],
+      "js": [
+        "content_scripts/card_create.js"
+      ],
+      "css": [
+        "content_scripts/card_create.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://p.eagate.573.jp/game/2dx/*/djdata/random_lane/index.html",
+        "https://p.eagate.573.jp/game/2dx/*/djdata/random_lane/index.html?*"
+      ],
+      "js": [
+        "content_scripts/random_lane.js"
+      ],
+      "css": [
+        "content_scripts/random_lane.css"
+      ]
+    }
+  ]
+}
