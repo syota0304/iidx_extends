@@ -1,6 +1,13 @@
 img.difficulty{
     vertical-align: middle;
+    max-width: 100%;
+    height: auto;
 }
+
+img.clear{
+    max-width: 100%;
+    height: auto;
+ }
 
 #bingo-edit > .bingo-table span.beginner{
     color: green;
