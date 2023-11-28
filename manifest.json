@@ -1,7 +1,7 @@
 {
   "name": "IIDX Extends",
   "manifest_version": 3,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "permissions": [
     "storage"
   ],
@@ -44,6 +44,15 @@
       ],
       "css": [
         "content_scripts/random_lane.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://p.eagate.573.jp/game/2dx/*/ranking/weekly.html",
+        "https://p.eagate.573.jp/game/2dx/*/ranking/weekly.html?*"
+      ],
+      "js": [
+        "content_scripts/weekly.js"
       ]
     }
   ]
