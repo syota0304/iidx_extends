@@ -5,15 +5,18 @@ if(tableElement){
         const ratingElement = document.querySelectorAll("div.weekly-rank.scroll > table:not([class]) > tbody > tr:nth-child(2) > td:nth-child(4)")[0];
         const ratingDiffElements = document.querySelectorAll("div.weekly-rank.scroll > table:not([class]) > tbody > tr:nth-child(2) > td:nth-child(5) > span");
 
-        if(!ratingElement || ratingDiffElements.length !== 2){
+        if(!ratingElement){
             return;
         }
 
         let rating = Number.parseInt(ratingElement.innerText);
-        const beforeRating = Number.parseInt((ratingDiffElements[0].innerText));
-        const afterRating = Number.parseInt((ratingDiffElements[1].innerText));
 
-        rating = rating === beforeRating ? rating : afterRating;
+        if(ratingDiffElements.length === 2){
+            const beforeRating = Number.parseInt((ratingDiffElements[0]?.innerText));
+            const afterRating = Number.parseInt((ratingDiffElements[1]?.innerText));
+
+            rating = rating === beforeRating ? rating : afterRating;
+        }
 
         Array.from(document.querySelectorAll("div.weekly-rank.scroll > table.pc_table1 > tbody > tr > td:nth-child(4)"))
             .forEach(e => {
